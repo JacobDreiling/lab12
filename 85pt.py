@@ -23,12 +23,23 @@ class MyApp:
 		# Do not change <Button-1> when you create Button 2 :)
 		self.button1.bind("<Button-1>", self.button1Click) ### (1)
 		
+		self.buttonZwei = Button(self.myContainer1)
+		self.buttonZwei.configure(text="Enden", background= "#6200FF")
+		self.buttonZwei.grid(row=0, column=1)	
+		self.buttonZwei.bind("<Button-1>", self.buttonZweiClick)
+		
 		
 	def button1Click(self, event):    ### (3)
 		if self.button1["background"] == "green": ### (4)
 			self.button1["background"] = "yellow"
 		else:
 			self.button1["background"] = "green"
+			
+	def buttonZweiClick(self, event):
+		if self.buttonZwei["background"] == "#6200FF":
+			self.buttonZwei["background"] = "#FF5900"
+		else:
+			self.buttonZwei["background"] = "#6200FF"
 	
 		
 root = Tk()
